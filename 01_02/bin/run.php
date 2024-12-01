@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-use Riddle\ListDistanceCalculator;
+use Riddle\ListSimilarityCalculator;
 use Riddle\Parser;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -11,4 +11,4 @@ $input = file_get_contents(__DIR__ . '/../input/input.txt');
 
 [$listA, $listB] = (new Parser())->parse($input);
 
-echo (new ListDistanceCalculator())->calculateDistance($listA, $listB);
+echo (new ListSimilarityCalculator())->calculateDistance($listA, $listB);

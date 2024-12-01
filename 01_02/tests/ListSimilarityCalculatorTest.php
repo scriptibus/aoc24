@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace RiddleTests;
 
 use PHPUnit\Framework\TestCase;
-use Riddle\ListDistanceCalculator;
+use Riddle\ListSimilarityCalculator;
 use RuntimeException;
 
-final class ListDistanceCalculatorTest extends TestCase
+final class ListSimilarityCalculatorTest extends TestCase
 {
     /**
      * @throws RuntimeException
@@ -32,9 +32,9 @@ final class ListDistanceCalculatorTest extends TestCase
             '3',
         ];
 
-        $calculator = new ListDistanceCalculator();
+        $calculator = new ListSimilarityCalculator();
         $distance = $calculator->calculateDistance($listA, $listB);
 
-        $this->assertSame(11, $distance);
+        $this->assertSame(31, $distance);
     }
 }

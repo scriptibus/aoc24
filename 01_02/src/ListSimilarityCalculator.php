@@ -8,7 +8,7 @@ use RuntimeException;
 
 use function count;
 
-final readonly class ListDistanceCalculator
+final readonly class ListSimilarityCalculator
 {
     /**
      * @param array<int, string> $listA
@@ -22,14 +22,16 @@ final readonly class ListDistanceCalculator
             throw new RuntimeException('Lists must have same length');
         }
 
-        sort($listA);
-        sort($listB);
+        $occurencesB = (new OccurenceCounter())->count($listB);
 
-        $distance = 0;
-        for ($i = 0; $i < count($listA); ++$i) {
-            $distance += abs((int) $listA[$i] - (int) $listB[$i]);
+        $similarity = 0;
+        foreach ($listA as $element) {
+            $element = (int) $element;
+            if (isset($occurencesB[$element])) {
+                $similarity += $element * $occurencesB[$element];
+            }
         }
 
-        return $distance;
+        return $similarity;
     }
 }
