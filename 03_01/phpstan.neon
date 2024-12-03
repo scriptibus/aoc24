@@ -7,7 +7,6 @@ parameters:
         max
     exceptions:
         check:
-            missingCheckedExceptionInThrows: true
             tooWideThrowType: true
     bootstrapFiles:
         - ./vendor/autoload.php
