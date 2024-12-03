@@ -11,10 +11,10 @@ final class MultiplyAndSumCalculatorTest extends TestCase
 {
     public function testCalculatesExampleCorrectly(): void
     {
-        $multiplications = [[2, 4], [5, 5], [11, 8], [8, 5]];
+        $multiplications = [[2, 4], false, [5, 5], [11, 8], true, [8, 5]];
 
         $result = (new MultiplyAndSumCalculator())->multiplyAndSum($multiplications);
 
-        $this->assertSame(161, $result);
+        $this->assertSame(48, $result);
     }
 }

@@ -16,6 +16,6 @@ final class ParserTest extends TestCase
 
         $result = (new Parser())->parse($input);
 
-        $this->assertSame([[2, 4], [5, 5], [11, 8], [8, 5]], $result);
+        $this->assertSame([[2, 4], false, [5, 5], [11, 8], true, [8, 5]], $result);
     }
 }
