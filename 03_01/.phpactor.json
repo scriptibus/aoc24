@@ -1,0 +1,16 @@
+{
+    "$schema": "/phpactor.schema.json",
+    "language_server_phpstan.enabled": true,
+    "language_server_phpstan.config": "%project_root%\/phpstan.neon",
+    "language_server_php_cs_fixer.enabled": true,
+    "symfony.enabled": true,
+    "indexer.exclude_patterns": [
+        "/vendor/**/Tests/**/*",
+        "/vendor/**/tests/**/*",
+        "/var/cache/**/*",
+        "/vendor/composer/**/*",
+        "/vendor/phpstan/**/*",
+        "/vendor/qossmic/deptrac/**/*"
+    ]
+}
+
