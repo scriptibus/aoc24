@@ -1,0 +1,26 @@
+[private]
+alias p := pipeline
+pipeline: cs test stan
+
+
+[private]
+alias s := stan
+stan:
+    @symfony php vendor/bin/phpstan analyze --configuration=phpstan.neon
+
+[private]
+alias t := test
+test:
+    @symfony php vendor/bin/phpunit --testdox --configuration=phpunit.xml
+
+
+[private]
+alias c := cs
+cs:
+    @PHP_CS_FIXER_IGNORE_ENV=1 symfony php vendor/bin/php-cs-fixer fix --config=phpcs.php --allow-risky=yes
+
+[private]
+alias r := run
+run *args:
+    symfony php bin/run.php {{args}}
+

@@ -1,0 +1,13 @@
+parameters:
+    paths:
+        - bin
+        - src
+        - tests
+    level:
+        max
+    exceptions:
+        check:
+            tooWideThrowType: true
+    bootstrapFiles:
+        - ./vendor/autoload.php
+
